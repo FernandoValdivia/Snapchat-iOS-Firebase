@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TXx-9y-uhs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image View Controller-->
+        <scene sceneID="bRv-Yh-rhn">
+            <objects>
+                <viewController id="TXx-9y-uhs" customClass="ImageViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="api-eV-sPK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yj0-Tx-uXJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="New Post" id="uHY-mc-Rgp">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.left" catalog="system" id="ufX-Pw-ohn">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="oDg-sP-D2d" kind="presentation" identifier="backToContacs" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4Go-Fk-QO3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="camera" catalog="system" id="mW0-sf-2J2">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="cameraTapped:" destination="TXx-9y-uhs" id="3Sz-Nz-l25"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-zF-UhG">
+                                <rect key="frame" x="67" y="123" width="280" height="280"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="QgW-Q4-Q6S"/>
+                                    <constraint firstAttribute="width" constant="280" id="mbA-Oa-hXn"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YrY-NX-DpT" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="67" y="428" width="280" height="18.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="rK4-jB-bSg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="DESCRIPTION"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvA-fX-P45">
+                                <rect key="frame" x="67" y="471.5" width="280" height="32"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="19S-ZQ-VSi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Add Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseContactTapped:" destination="TXx-9y-uhs" eventType="touchUpInside" id="KV6-dk-TxL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rcz-7I-zZP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yj0-Tx-uXJ" firstAttribute="centerX" secondItem="api-eV-sPK" secondAttribute="centerX" id="3iy-C1-UzS"/>
+                            <constraint firstItem="yj0-Tx-uXJ" firstAttribute="top" secondItem="rcz-7I-zZP" secondAttribute="top" id="5ch-fB-eXo"/>
+                            <constraint firstItem="yj0-Tx-uXJ" firstAttribute="trailing" secondItem="rcz-7I-zZP" secondAttribute="trailing" id="8wW-8Y-r6y"/>
+                            <constraint firstItem="yj0-Tx-uXJ" firstAttribute="leading" secondItem="rcz-7I-zZP" secondAttribute="leading" id="9Wn-JQ-JKS"/>
+                            <constraint firstItem="YrY-NX-DpT" firstAttribute="top" secondItem="wOF-zF-UhG" secondAttribute="bottom" constant="25" id="GD0-xZ-sZJ"/>
+                            <constraint firstItem="OvA-fX-P45" firstAttribute="centerX" secondItem="api-eV-sPK" secondAttribute="centerX" id="Rca-vh-uYV"/>
+                            <constraint firstItem="OvA-fX-P45" firstAttribute="top" secondItem="YrY-NX-DpT" secondAttribute="bottom" constant="25" id="p6n-qD-P0F"/>
+                            <constraint firstItem="wOF-zF-UhG" firstAttribute="centerX" secondItem="api-eV-sPK" secondAttribute="centerX" id="pjz-Ol-reS"/>
+                            <constraint firstItem="YrY-NX-DpT" firstAttribute="centerX" secondItem="api-eV-sPK" secondAttribute="centerX" id="u0q-xb-G4S"/>
+                            <constraint firstItem="wOF-zF-UhG" firstAttribute="top" secondItem="yj0-Tx-uXJ" secondAttribute="bottom" constant="35" id="wjX-Hw-8Y4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseContactButton" destination="OvA-fX-P45" id="NxH-hJ-X05"/>
+                        <outlet property="descriptionTextField" destination="YrY-NX-DpT" id="VDF-R0-xf1"/>
+                        <outlet property="imageView" destination="wOF-zF-UhG" id="DGQ-np-YNf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nD7-TL-8dz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794" y="108"/>
+        </scene>
+        <!--HomeStoryboard-->
+        <scene sceneID="lR2-eJ-ilK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeStoryboard" id="oDg-sP-D2d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evy-x5-fDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794" y="500"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
