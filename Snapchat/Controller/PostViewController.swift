@@ -16,7 +16,6 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createPostArray()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 
@@ -29,12 +28,6 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
-    }
-    
-    func createPostArray() {
-        posts.append(Post(postName: "Post 1", postImage: #imageLiteral(resourceName: "post"), postDesc: "This is about Post 1"))
-        posts.append(Post(postName: "Post 2", postImage: #imageLiteral(resourceName: "post"),postDesc: "This is about Post 2"))
-        posts.append(Post(postName: "Post 3", postImage: #imageLiteral(resourceName: "post"),postDesc: "This is about Post 1"))
     }
 
 }

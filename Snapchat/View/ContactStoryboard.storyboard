@@ -19,7 +19,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yj0-Tx-uXJ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="New Post" id="uHY-mc-Rgp">
+                                    <navigationItem title="Contact" id="uHY-mc-Rgp">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.left" catalog="system" id="ufX-Pw-ohn">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
@@ -85,7 +85,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="19S-ZQ-VSi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Add Post">
+                                <state key="normal" title="Choose Contact">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -95,6 +95,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="chooseContactTapped:" destination="TXx-9y-uhs" eventType="touchUpInside" id="KV6-dk-TxL"/>
+                                    <segue destination="cGH-sP-lxz" kind="show" id="Aov-ys-zBj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,6 +123,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nD7-TL-8dz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-794" y="108"/>
+        </scene>
+        <!--Choose Contact View Controller-->
+        <scene sceneID="s1f-UK-2kJ">
+            <objects>
+                <viewController id="cGH-sP-lxz" customClass="ChooseContactViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0x4-KQ-VpX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L8l-b4-m6g" customClass="Cho">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JiA-Af-4Hx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JiA-Af-4Hx" firstAttribute="trailing" secondItem="L8l-b4-m6g" secondAttribute="trailing" id="2AA-jD-HJ5"/>
+                            <constraint firstItem="L8l-b4-m6g" firstAttribute="top" secondItem="JiA-Af-4Hx" secondAttribute="top" id="Bfz-He-kKb"/>
+                            <constraint firstItem="JiA-Af-4Hx" firstAttribute="bottom" secondItem="L8l-b4-m6g" secondAttribute="bottom" id="HCx-XJ-mhZ"/>
+                            <constraint firstItem="L8l-b4-m6g" firstAttribute="leading" secondItem="JiA-Af-4Hx" secondAttribute="leading" id="TXQ-2Q-qjA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZqM-Fa-HqF"/>
+                    <connections>
+                        <outlet property="tableView" destination="L8l-b4-m6g" id="a55-sN-k6x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOS-Kq-zz6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="108"/>
         </scene>
         <!--HomeStoryboard-->
         <scene sceneID="lR2-eJ-ilK">

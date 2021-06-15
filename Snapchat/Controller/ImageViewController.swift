@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseDatabase
 
 class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -37,6 +38,8 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func chooseContactTapped(_ sender: UIButton) {
+        chooseContactButton.isEnabled = false
+        let imagenesFolder = Database.database().reference().child("imagenes")
         
     }
     

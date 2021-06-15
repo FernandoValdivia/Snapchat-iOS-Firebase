@@ -10,7 +10,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseFirestore
 
-class SigninViewController: UIViewController {
+class SignupViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var userTextField: UITextField!
@@ -58,27 +58,28 @@ class SigninViewController: UIViewController {
                         if error == nil {
                         
                             let usermodel = User(username: "\(username)", user: "\(user)")
-                            let usuario = usermodel.user
-                            let nombre = usermodel.username
-                            print("User: \(usuario) Username: \(nombre)")
-                            
+                            let authuser = Auth.auth().currentUser
                             //Registrar usuario y nombre en la base de datos
                             //RealtimeDatabase
                             let object : [String: Any] = [
-                                "username": "\(username)" as NSObject,
-                                "email": "\(user)" as NSObject
+                                "username": "\(username)",
+                                "email": "\(user)"
                             ]
-                            self.database.child("users").child("user-\(Auth.auth().currentUser!.uid)").setValue(object)
+                            
+                            print(object)
+                            self.database.child("users/\(authuser!.uid)/username").setValue(username)
+                            
+                            self.database.child("users").child(authuser!.uid).setValue(object)
                             
                             //FirestoreDatabase
-                            self.db.collection("users").document(Auth.auth().currentUser!.uid).setData([
+                            self.db.collection("users").document(authuser!.uid).setData([
                                 "username":username,
                                 "user":user
                             ])
                             print("Todo buenardo, usuario creado exitosamente gg")
                             
                             //Navegar hacia Home
-                            self.performSegue(withIdentifier: "signinSegue", sender: nil)
+                            self.performSegue(withIdentifier: "signupSegue", sender: nil)
                             
                         }else {
                          

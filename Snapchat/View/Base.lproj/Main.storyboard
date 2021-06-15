@@ -33,7 +33,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="p0n-4L-a33" kind="show" id="T6z-7v-zPe"/>
+                                    <segue destination="p0n-4L-a33" kind="presentation" modalPresentationStyle="fullScreen" id="yO6-Md-u8n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPq-Fk-aLZ">
@@ -223,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="1903" y="78"/>
         </scene>
-        <!--Signin View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="pHs-YG-IS8">
             <objects>
-                <viewController id="p0n-4L-a33" customClass="SigninViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="p0n-4L-a33" customClass="SignupViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Den-2z-lGA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -459,7 +459,7 @@
                         <outlet property="password2TextField" destination="d6d-4H-XCh" id="TlC-e2-05x"/>
                         <outlet property="userTextField" destination="3gr-ec-wL9" id="ADc-N1-APK"/>
                         <outlet property="usernameTextField" destination="EYp-FB-7jp" id="NZt-y3-0Jo"/>
-                        <segue destination="ArZ-FS-p2p" kind="presentation" identifier="signinSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="nDm-ea-iIC"/>
+                        <segue destination="ArZ-FS-p2p" kind="presentation" identifier="signupSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="nDm-ea-iIC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZH-zw-QnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
