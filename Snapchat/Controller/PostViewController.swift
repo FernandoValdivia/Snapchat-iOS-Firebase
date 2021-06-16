@@ -8,21 +8,17 @@
 import UIKit
 
 class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    let cellId = "cellId"
+
     var posts : [Post] = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        let currectLastItem = posts[indexPath.row]
-        cell.textLabel?.text = "hola"
+        let cell = UITableViewCell()
         return cell
     }
     

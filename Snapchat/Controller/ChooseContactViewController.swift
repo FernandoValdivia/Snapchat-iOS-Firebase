@@ -19,15 +19,21 @@ class ChooseContactViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-//        database.child("users").observe(DataEventType.childAdded, with: {(snapshot) in
-//            print(snapshot)
-//            
-//            let contacto = Contact()
-//            contacto.email = (snapshot.value as! NSDictionary)["email"] as! String
-//            contacto.uid = snapshot.key
-//            self.contactos.append(contacto)
-//            self.tableView.reloadData()
-//        });
+        database.child("users").observe(DataEventType.childAdded, with: {(snapshot) in
+            print(snapshot)
+            
+            let contacto = Contact()
+            contacto.email = (snapshot.value as! NSDictionary)["email"] as! String
+            contacto.uid = snapshot.key
+            self.contactos.append(contacto)
+            self.tableView.reloadData()
+        });
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let contacto = contactos[indexPath.row]
+        let snap = ["from": contacto.email, "descripcion":descrip, "imagenURL":imageURL]
+        database.child("users").child(contacto.uid).child("snaps").childByAutoId().setValue(snap)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

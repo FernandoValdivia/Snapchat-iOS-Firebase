@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="User Profile" id="vgH-VS-7N9">
-                                        <barButtonItem key="rightBarButtonItem" title="Close Session" id="UJw-8t-QZn">
+                                        <barButtonItem key="rightBarButtonItem" title="Close Session" image="cerrar-sesion (1)" id="UJw-8t-QZn">
                                             <color key="tintColor" red="1" green="0.37254901959999998" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="closeSessionButton:" destination="Sot-0o-2Ua" id="K9F-d8-6O1"/>
@@ -188,23 +188,48 @@
             </objects>
             <point key="canvasLocation" x="5112" y="802"/>
         </scene>
-        <!--View Controller-->
+        <!--Snaps-->
         <scene sceneID="lcx-6B-HBj">
             <objects>
-                <viewController id="LWj-1i-fWU" sceneMemberID="viewController">
+                <viewController id="LWj-1i-fWU" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pGU-TN-2RJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWA-5s-eXI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Snaps" id="9Yw-EO-auM"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XOj-ni-jZz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zDM-EQ-m7o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bWA-5s-eXI" firstAttribute="trailing" secondItem="zDM-EQ-m7o" secondAttribute="trailing" id="2Z2-dY-LAU"/>
+                            <constraint firstItem="bWA-5s-eXI" firstAttribute="top" secondItem="zDM-EQ-m7o" secondAttribute="top" id="4Mm-QM-xdV"/>
+                            <constraint firstItem="zDM-EQ-m7o" firstAttribute="trailing" secondItem="XOj-ni-jZz" secondAttribute="trailing" id="4aG-1I-TPd"/>
+                            <constraint firstItem="zDM-EQ-m7o" firstAttribute="bottom" secondItem="XOj-ni-jZz" secondAttribute="bottom" id="LnB-Q2-99X"/>
+                            <constraint firstItem="bWA-5s-eXI" firstAttribute="leading" secondItem="zDM-EQ-m7o" secondAttribute="leading" id="R38-KI-1UC"/>
+                            <constraint firstItem="XOj-ni-jZz" firstAttribute="leading" secondItem="zDM-EQ-m7o" secondAttribute="leading" id="f2U-40-qD6"/>
+                            <constraint firstItem="XOj-ni-jZz" firstAttribute="top" secondItem="bWA-5s-eXI" secondAttribute="bottom" id="mSE-hI-hG5"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Snaps" image="send" id="zz5-Zc-2fI"/>
                     <navigationItem key="navigationItem" id="hRK-xy-W5Z"/>
+                    <connections>
+                        <outlet property="tableView" destination="XOj-ni-jZz" id="sQZ-DG-ROh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDm-Ne-3vf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5870" y="802"/>
         </scene>
-        <!--Post-->
+        <!--Contact-->
         <scene sceneID="zRq-fQ-Xu7">
             <objects>
                 <viewController id="WrE-Yf-dhG" customClass="PostViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
@@ -216,7 +241,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Posts" id="3Rz-LC-qc7">
+                                    <navigationItem title="Contact" id="3Rz-LC-qc7">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="buU-Bx-SnB">
                                             <connections>
                                                 <segue destination="FwV-ky-aY2" kind="presentation" modalPresentationStyle="fullScreen" id="Oqw-4W-fDL"/>
@@ -234,7 +259,7 @@
                         <viewLayoutGuide key="safeArea" id="AQg-NZ-7ZY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Post" image="send" selectedImage="send" id="mgH-qd-z2m"/>
+                    <tabBarItem key="tabBarItem" title="Contact" image="contacs" selectedImage="contacs" id="mgH-qd-z2m"/>
                     <connections>
                         <outlet property="tableView" destination="BcM-bf-nuQ" id="PvG-9c-xbi"/>
                     </connections>
@@ -255,6 +280,7 @@
         <scene sceneID="uNb-CJ-mt2">
             <objects>
                 <tabBarController id="dKG-bj-MoN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Pnw-sP-pHW"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zkc-IC-kLZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -266,6 +292,7 @@
                     <connections>
                         <segue destination="WrE-Yf-dhG" kind="relationship" relationship="viewControllers" id="1KN-Tk-CZO"/>
                         <segue destination="Sot-0o-2Ua" kind="relationship" relationship="viewControllers" id="0Vw-jW-JNv"/>
+                        <segue destination="LWj-1i-fWU" kind="relationship" relationship="viewControllers" id="6KH-O0-shA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQJ-hL-Nug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -275,6 +302,8 @@
     </scenes>
     <resources>
         <image name="avatar" width="32" height="32"/>
+        <image name="cerrar-sesion (1)" width="32" height="32"/>
+        <image name="contacs" width="32" height="32"/>
         <image name="send" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

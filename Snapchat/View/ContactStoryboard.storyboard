@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Contact" id="uHY-mc-Rgp">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.left" catalog="system" id="ufX-Pw-ohn">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="ufX-Pw-ohn">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="oDg-sP-D2d" kind="presentation" identifier="backToContacs" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4Go-Fk-QO3"/>
@@ -95,7 +95,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="chooseContactTapped:" destination="TXx-9y-uhs" eventType="touchUpInside" id="KV6-dk-TxL"/>
-                                    <segue destination="cGH-sP-lxz" kind="show" id="Aov-ys-zBj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,6 +117,7 @@
                         <outlet property="chooseContactButton" destination="OvA-fX-P45" id="NxH-hJ-X05"/>
                         <outlet property="descriptionTextField" destination="YrY-NX-DpT" id="VDF-R0-xf1"/>
                         <outlet property="imageView" destination="wOF-zF-UhG" id="DGQ-np-YNf"/>
+                        <segue destination="cGH-sP-lxz" kind="show" identifier="chooseContactSegue" id="I1a-bf-ZXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nD7-TL-8dz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -165,7 +165,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
