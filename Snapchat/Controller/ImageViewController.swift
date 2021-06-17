@@ -41,6 +41,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let storageReference = Storage.storage()
         let imageFolder = storageReference.reference().child("images")
 
+
         imageFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil){metadata, error in
             if error == nil {
                 imageFolder.downloadURL {url, error in
@@ -55,8 +56,16 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             else {
                 print("Ocurrio un error: \(error)")
             }
+
+        imageFolder.putData(imageData, metadata: nil){metadata, error in
+            imageFolder.downloadURL {url, error in
+                guard let url = url else {return}
+                self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
+
+                }
             }
         }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let siguienteVC = segue.destination as! ChooseContactViewController
@@ -64,7 +73,3 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         siguienteVC.descrip = descriptionTextField.text!
     }
 }
-
-    
-    
-
