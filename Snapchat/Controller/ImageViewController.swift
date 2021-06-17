@@ -45,14 +45,14 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         imageFolder.putData(imageData, metadata: nil){metadata, error in
             imageFolder.downloadURL {url, error in
                 guard let url = url else {return}
-
+                self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let siguienteVC = segue.destination as! ChooseContactViewController
-        //siguienteVC.imageURL = sender as! String
+        siguienteVC.imageURL = sender as! String
         siguienteVC.descrip = descriptionTextField.text!
     }
 }
