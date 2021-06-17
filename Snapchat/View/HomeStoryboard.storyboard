@@ -223,11 +223,53 @@
                     <navigationItem key="navigationItem" id="hRK-xy-W5Z"/>
                     <connections>
                         <outlet property="tableView" destination="XOj-ni-jZz" id="sQZ-DG-ROh"/>
+                        <segue destination="sk7-qg-jqb" kind="presentation" identifier="viewSnapSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="sVw-KC-cwa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDm-Ne-3vf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5870" y="802"/>
+        </scene>
+        <!--View Snap View Controller-->
+        <scene sceneID="0m2-M1-266">
+            <objects>
+                <viewController id="sk7-qg-jqb" customClass="ViewSnapViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ice-Fm-UI6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsH-SD-cso">
+                                <rect key="frame" x="5" y="823" width="404" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DF8-Lx-13X">
+                                <rect key="frame" x="10" y="54" width="394" height="759"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FqZ-xJ-1E4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DF8-Lx-13X" firstAttribute="top" secondItem="FqZ-xJ-1E4" secondAttribute="top" constant="10" id="JYw-Da-vmM"/>
+                            <constraint firstItem="UsH-SD-cso" firstAttribute="leading" secondItem="FqZ-xJ-1E4" secondAttribute="leading" constant="5" id="Jji-dc-BUy"/>
+                            <constraint firstItem="DF8-Lx-13X" firstAttribute="leading" secondItem="FqZ-xJ-1E4" secondAttribute="leading" constant="10" id="M0X-5H-QOu"/>
+                            <constraint firstItem="FqZ-xJ-1E4" firstAttribute="bottom" secondItem="UsH-SD-cso" secondAttribute="bottom" constant="15" id="b9p-G6-ysL"/>
+                            <constraint firstItem="UsH-SD-cso" firstAttribute="top" secondItem="DF8-Lx-13X" secondAttribute="bottom" constant="10" id="g5C-6p-6T7"/>
+                            <constraint firstItem="FqZ-xJ-1E4" firstAttribute="trailing" secondItem="DF8-Lx-13X" secondAttribute="trailing" constant="10" id="gb1-50-zV8"/>
+                            <constraint firstItem="FqZ-xJ-1E4" firstAttribute="trailing" secondItem="UsH-SD-cso" secondAttribute="trailing" constant="5" id="jam-Rc-3td"/>
+                            <constraint firstItem="UsH-SD-cso" firstAttribute="centerX" secondItem="ice-Fm-UI6" secondAttribute="centerX" id="o2a-Ja-tkN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mv7-7Q-ap6"/>
+                    <connections>
+                        <outlet property="descripTextField" destination="UsH-SD-cso" id="wYA-5U-Dm5"/>
+                        <outlet property="imageSnap" destination="DF8-Lx-13X" id="GCs-ZV-6aL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbW-gw-86J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6639.130434782609" y="801.5625"/>
         </scene>
         <!--Contact-->
         <scene sceneID="zRq-fQ-Xu7">

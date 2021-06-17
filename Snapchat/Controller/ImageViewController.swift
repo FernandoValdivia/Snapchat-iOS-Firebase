@@ -4,7 +4,6 @@
 //
 //  Created by mbtec22 on 5/20/21.
 //
-
 import UIKit
 import FirebaseStorage
 import FirebaseDatabase
@@ -42,17 +41,30 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let storageReference = Storage.storage()
         let imageFolder = storageReference.reference().child("images")
 
-        imageFolder.putData(imageData, metadata: nil){metadata, error in
-            imageFolder.downloadURL {url, error in
-                guard let url = url else {return}
-
+        imageFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil){metadata, error in
+            if error == nil {
+                imageFolder.downloadURL {url, error in
+                    print("URL")
+                    guard let url = url else {return}
+                    print(url.absoluteString)
+                    print(url.absoluteURL)
+                    self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
+                }
+                
+            }
+            else {
+                print("Ocurrio un error: \(error)")
+            }
             }
         }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let siguienteVC = segue.destination as! ChooseContactViewController
-        //siguienteVC.imageURL = sender as! String
+        siguienteVC.imageURL = sender as! String
         siguienteVC.descrip = descriptionTextField.text!
     }
 }
+
+    
+    
+

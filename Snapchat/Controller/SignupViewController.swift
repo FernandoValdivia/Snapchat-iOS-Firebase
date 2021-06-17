@@ -26,7 +26,7 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func siginButton(_ sender: Any) {

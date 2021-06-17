@@ -4,7 +4,6 @@
 //
 //  Created by mbtec22 on 5/20/21.
 //
-
 import UIKit
 import FirebaseDatabase
 
@@ -32,8 +31,13 @@ class ChooseContactViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let contacto = contactos[indexPath.row]
-        let snap = ["from": contacto.email, "descripcion":descrip, "imagenURL":imageURL]
+        let snap = [
+            "from": contacto.email,
+            "descripcion":descrip,
+            "imagenURL":imageURL
+        ]
         database.child("users").child(contacto.uid).child("snaps").childByAutoId().setValue(snap)
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
