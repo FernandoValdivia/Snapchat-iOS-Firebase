@@ -13,5 +13,6 @@ target 'Snapchat' do
   pod 'Firebase/Storage'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Firestore'
+  pod 'SDWebImage'
 end
 

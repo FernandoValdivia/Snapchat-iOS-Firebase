@@ -23,6 +23,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="ufX-Pw-ohn">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
+                                                <action selector="backButonContact:" destination="TXx-9y-uhs" id="yUD-bk-r0i"/>
                                                 <segue destination="oDg-sP-D2d" kind="presentation" identifier="backToContacs" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4Go-Fk-QO3"/>
                                             </connections>
                                         </barButtonItem>

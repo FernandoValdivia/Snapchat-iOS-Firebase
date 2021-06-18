@@ -6,14 +6,17 @@
 //
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class ChooseContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     private let database = Database.database().reference()
+    private let authuser = Auth.auth().currentUser
     var contactos : [Contact] = []
     var imageURL = ""
     var descrip = ""
+    var imageID = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -32,11 +35,13 @@ class ChooseContactViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let contacto = contactos[indexPath.row]
         let snap = [
-            "from": contacto.email,
+            "from": authuser!.email!,
             "descripcion":descrip,
-            "imagenURL":imageURL
+            "imagenURL":imageURL,
+            "imageID":imageID
         ]
         database.child("users").child(contacto.uid).child("snaps").childByAutoId().setValue(snap)
+        navigationController?.popToRootViewController(animated: true)
         
     }
 

@@ -289,6 +289,9 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - TweeTextField (1.6.3)
 
 DEPENDENCIES:
@@ -298,6 +301,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - FirebaseFirestoreSwift
+  - SDWebImage
   - TweeTextField
 
 SPEC REPOS:
@@ -325,6 +329,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - SDWebImage
     - TweeTextField
 
 SPEC CHECKSUMS:
@@ -351,8 +356,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   TweeTextField: 47bf8e7f0433364a7f7e119c45e7f278ea50eb62
 
-PODFILE CHECKSUM: 4c325d8ebe0a767b3e2fa00fac5756c29d7b1021
+PODFILE CHECKSUM: 149953d4c1cf6b57523673a792ec02cb2cca9bd6
 
 COCOAPODS: 1.8.4

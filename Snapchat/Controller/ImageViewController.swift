@@ -15,10 +15,12 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var chooseContactButton: UIButton!
     
     var imagePicker = UIImagePickerController()
+    var imageID = NSUUID().uuidString
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        chooseContactButton.isEnabled = false
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -26,6 +28,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let url = info[UIImagePickerController.InfoKey.imageURL] as! URL
         imageView.image = image
         imageView.backgroundColor = UIColor.clear
+        chooseContactButton.isEnabled = true
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
@@ -42,7 +45,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let imageFolder = storageReference.reference().child("images")
 
 
-        imageFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil){metadata, error in
+        imageFolder.child("\(imageID).jpg").putData(imageData, metadata: nil){metadata, error in
             if error == nil {
                 imageFolder.downloadURL {url, error in
                     print("URL")
@@ -66,10 +69,16 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
         }
     }
+    @IBAction func backButonContact(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let siguienteVC = segue.destination as! ChooseContactViewController
+        let tabCtrl = segue.destination as! UITabBarController
+        let siguienteVC = tabCtrl.viewControllers![0] as! ChooseContactViewController
+        //let siguienteVC = segue.destination as! ChooseContactViewController
         siguienteVC.imageURL = sender as! String
         siguienteVC.descrip = descriptionTextField.text!
+        siguienteVC.imageID = imageID
     }
 }
