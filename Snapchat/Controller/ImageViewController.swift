@@ -25,7 +25,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        let url = info[UIImagePickerController.InfoKey.imageURL] as! URL
+        //let url = info[UIImagePickerController.InfoKey.imageURL] as! URL
         imageView.image = image
         imageView.backgroundColor = UIColor.clear
         chooseContactButton.isEnabled = true
@@ -59,14 +59,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             else {
                 print("Ocurrio un error: \(error?.localizedDescription)")
             }
-
-//        imageFolder.putData(imageData, metadata: nil){metadata, error in
-//            imageFolder.downloadURL {url, error in
-//                guard let url = url else {return}
-//                self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
-//
-//                }
-//            }
         }
     }
     @IBAction func backButonContact(_ sender: UIBarButtonItem) {

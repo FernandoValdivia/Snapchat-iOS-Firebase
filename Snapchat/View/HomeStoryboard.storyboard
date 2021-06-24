@@ -21,7 +21,7 @@
         <!--User-->
         <scene sceneID="Vx9-zm-QGs">
             <objects>
-                <viewController id="Sot-0o-2Ua" customClass="HomeViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainHome" id="Sot-0o-2Ua" customClass="HomeViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wqo-Xi-KRE" customClass="TweeActiveTextField" customModule="TweeTextField">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
