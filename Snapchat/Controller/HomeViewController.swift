@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
         emailField.isEnabled = false
         usernameField.backgroundColor = #colorLiteral(red: 0.8981244789, green: 0.8981244789, blue: 0.8981244789, alpha: 1)
         emailField.backgroundColor = #colorLiteral(red: 0.9003623188, green: 0.9003623188, blue: 0.9003623188, alpha: 1)
+        validateUser()
+        
     }
     
     //Obtener datos de Firestore
@@ -42,6 +44,21 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    //Validar sesión de usuario
+    func validateUser() {
+            if Auth.auth().currentUser != nil {
+                let storyboard: UIStoryboard = UIStoryboard(name: "HomeStoryboard", bundle: nil)
+                let homeViewController = storyboard.instantiateViewController(withIdentifier: "Main") as! HomeViewController
+                homeViewController.modalPresentationStyle = .fullScreen
+                let navigationController = UINavigationController(rootViewController: homeViewController)
+                navigationController.isToolbarHidden = false
+                navigationController.modalPresentationStyle = .fullScreen
+                navigationController.modalTransitionStyle = .flipHorizontal
+                
+                self.present(navigationController, animated: true)
+            }
+        }
     
     //Cerrar sesión
     @IBAction func closeSessionButton(_ sender: UIBarButtonItem) {

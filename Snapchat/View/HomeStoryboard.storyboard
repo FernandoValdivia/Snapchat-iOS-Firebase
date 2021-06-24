@@ -213,10 +213,13 @@
                             <constraint firstItem="bWA-5s-eXI" firstAttribute="trailing" secondItem="zDM-EQ-m7o" secondAttribute="trailing" id="2Z2-dY-LAU"/>
                             <constraint firstItem="bWA-5s-eXI" firstAttribute="top" secondItem="zDM-EQ-m7o" secondAttribute="top" id="4Mm-QM-xdV"/>
                             <constraint firstItem="zDM-EQ-m7o" firstAttribute="trailing" secondItem="XOj-ni-jZz" secondAttribute="trailing" id="4aG-1I-TPd"/>
+                            <constraint firstItem="bWA-5s-eXI" firstAttribute="trailing" secondItem="zDM-EQ-m7o" secondAttribute="trailing" id="9NI-ap-Mct"/>
                             <constraint firstItem="zDM-EQ-m7o" firstAttribute="bottom" secondItem="XOj-ni-jZz" secondAttribute="bottom" id="LnB-Q2-99X"/>
                             <constraint firstItem="bWA-5s-eXI" firstAttribute="leading" secondItem="zDM-EQ-m7o" secondAttribute="leading" id="R38-KI-1UC"/>
+                            <constraint firstItem="bWA-5s-eXI" firstAttribute="leading" secondItem="zDM-EQ-m7o" secondAttribute="leading" id="d1u-oc-tSl"/>
                             <constraint firstItem="XOj-ni-jZz" firstAttribute="leading" secondItem="zDM-EQ-m7o" secondAttribute="leading" id="f2U-40-qD6"/>
                             <constraint firstItem="XOj-ni-jZz" firstAttribute="top" secondItem="bWA-5s-eXI" secondAttribute="bottom" id="mSE-hI-hG5"/>
+                            <constraint firstItem="bWA-5s-eXI" firstAttribute="top" secondItem="zDM-EQ-m7o" secondAttribute="top" id="pHh-nB-88L"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Snaps" image="send" id="zz5-Zc-2fI"/>
@@ -245,15 +248,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DF8-Lx-13X">
-                                <rect key="frame" x="10" y="54" width="394" height="759"/>
+                                <rect key="frame" x="10" y="104" width="394" height="709"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBP-q0-lnT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Snap" id="LSj-vl-doT">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="A4I-U8-sD6">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backwardBarButton:" destination="sk7-qg-jqb" id="VsM-Ov-E28"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FqZ-xJ-1E4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DF8-Lx-13X" firstAttribute="top" secondItem="FqZ-xJ-1E4" secondAttribute="top" constant="10" id="JYw-Da-vmM"/>
+                            <constraint firstItem="DF8-Lx-13X" firstAttribute="top" secondItem="BBP-q0-lnT" secondAttribute="bottom" constant="16" id="0pb-rq-Qcr"/>
+                            <constraint firstItem="BBP-q0-lnT" firstAttribute="trailing" secondItem="FqZ-xJ-1E4" secondAttribute="trailing" id="JUf-Wp-BTH"/>
                             <constraint firstItem="UsH-SD-cso" firstAttribute="leading" secondItem="FqZ-xJ-1E4" secondAttribute="leading" constant="5" id="Jji-dc-BUy"/>
                             <constraint firstItem="DF8-Lx-13X" firstAttribute="leading" secondItem="FqZ-xJ-1E4" secondAttribute="leading" constant="10" id="M0X-5H-QOu"/>
+                            <constraint firstItem="BBP-q0-lnT" firstAttribute="top" secondItem="FqZ-xJ-1E4" secondAttribute="top" id="aCP-aA-djB"/>
+                            <constraint firstItem="BBP-q0-lnT" firstAttribute="leading" secondItem="FqZ-xJ-1E4" secondAttribute="leading" id="aDr-Rc-t2q"/>
                             <constraint firstItem="FqZ-xJ-1E4" firstAttribute="bottom" secondItem="UsH-SD-cso" secondAttribute="bottom" constant="15" id="b9p-G6-ysL"/>
                             <constraint firstItem="UsH-SD-cso" firstAttribute="top" secondItem="DF8-Lx-13X" secondAttribute="bottom" constant="10" id="g5C-6p-6T7"/>
                             <constraint firstItem="FqZ-xJ-1E4" firstAttribute="trailing" secondItem="DF8-Lx-13X" secondAttribute="trailing" constant="10" id="gb1-50-zV8"/>
@@ -343,6 +362,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="avatar" width="32" height="32"/>
         <image name="cerrar-sesion (1)" width="32" height="32"/>
         <image name="contacs" width="32" height="32"/>

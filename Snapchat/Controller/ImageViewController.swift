@@ -52,21 +52,21 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
                     guard let url = url else {return}
                     print(url.absoluteString)
                     print(url.absoluteURL)
-                    //self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
+                    self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
                 }
                 
             }
             else {
-                print("Ocurrio un error: \(error)")
+                print("Ocurrio un error: \(error?.localizedDescription)")
             }
 
-        imageFolder.putData(imageData, metadata: nil){metadata, error in
-            imageFolder.downloadURL {url, error in
-                guard let url = url else {return}
-                self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
-
-                }
-            }
+//        imageFolder.putData(imageData, metadata: nil){metadata, error in
+//            imageFolder.downloadURL {url, error in
+//                guard let url = url else {return}
+//                self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
+//
+//                }
+//            }
         }
     }
     @IBAction func backButonContact(_ sender: UIBarButtonItem) {

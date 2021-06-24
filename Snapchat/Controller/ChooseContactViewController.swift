@@ -41,7 +41,7 @@ class ChooseContactViewController: UIViewController, UITableViewDataSource, UITa
             "imageID":imageID
         ]
         database.child("users").child(contacto.uid).child("snaps").childByAutoId().setValue(snap)
-        navigationController?.popToRootViewController(animated: true)
+        dismiss(animated: true, completion: nil)
         
     }
 

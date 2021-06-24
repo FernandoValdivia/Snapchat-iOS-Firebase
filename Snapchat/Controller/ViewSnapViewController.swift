@@ -30,4 +30,9 @@ class ViewSnapViewController: UIViewController {
             print("Se eliminó la imagen correctamente del Storage")
         }
     }
+    
+    @IBAction func backwardBarButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

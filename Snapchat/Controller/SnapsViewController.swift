@@ -12,7 +12,7 @@ class SnapsViewController: UIViewController {
         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childAdded, with: {
             (snapshot) in
             let snap = Snap()
-            snap.imageURL = (snapshot.value as! NSDictionary)["imageURL"] as! String
+            snap.imageURL = (snapshot.value as! NSDictionary)["imagenURL"] as! String
             snap.from = (snapshot.value as! NSDictionary)["from"] as! String
             snap.descrip = (snapshot.value as! NSDictionary)["descripcion"] as! String
             snap.id = snapshot.key
