@@ -53,7 +53,8 @@ extension SnapsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         if snaps.count == 0 {
-            cell.textLabel?.text = "Aún no tienes Snaps "
+            cell.textLabel?.text = "Aún no tienes Snaps"
+            cell.isSelected = true
         }
         else {
             let snap = snaps[indexPath.row]

@@ -39,7 +39,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func chooseContactTapped(_ sender: UIButton) {
-        chooseContactButton.isEnabled = true
+        chooseContactButton.isEnabled = false
         let imageData = imageView.image!.pngData()!
         let storageReference = Storage.storage()
         let imageFolder = storageReference.reference().child("images")
@@ -52,7 +52,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
                     guard let url = url else {return}
                     print(url.absoluteString)
                     print(url.absoluteURL)
-                    self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
+                    //self.performSegue(withIdentifier: "chooseContactSegue", sender: url.absoluteString)
                 }
                 
             }
@@ -74,9 +74,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabCtrl = segue.destination as! UITabBarController
-        let siguienteVC = tabCtrl.viewControllers![0] as! ChooseContactViewController
-        //let siguienteVC = segue.destination as! ChooseContactViewController
+        let siguienteVC = segue.destination as! ChooseContactViewController
         siguienteVC.imageURL = sender as! String
         siguienteVC.descrip = descriptionTextField.text!
         siguienteVC.imageID = imageID
